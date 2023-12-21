@@ -3,7 +3,7 @@ const WebSocket = require('ws')
 const PORT = process.env.PORT || 8080;
 const wss = new WebSocket.Server({ port: PORT })
 const onlinePlayers = new Map();
-const handleConnection = require('./controllers/handleConnection');
+const handleConnection = require('./controllers/handleConnection.js');
 
 
 wss.on('connection', (ws,request) => {
