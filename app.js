@@ -1,3 +1,4 @@
+
 const WebSocket = require('ws')
 const PORT = process.env.PORT || 8080;
 const wss = new WebSocket.Server({ port: PORT })
@@ -7,10 +8,8 @@ const handleConnection = require('./controllers/handleConnection');
 
 wss.on('connection', (ws,request) => {
     handleConnection(onlinePlayers,ws,request)
-    console.log(onlinePlayers)
   ws.on('message', (message) => {
     messagejson=JSON.parse(message.toString('utf-8'))
-    console.log(messagejson)
     let myPlayer = Array.from(onlinePlayers.entries()).filter(([clientId, player]) => clientId==messagejson.clientId);
     let myname=myPlayer[0][1].username
     let myws=myPlayer[0][1].ws
@@ -31,7 +30,6 @@ wss.on('connection', (ws,request) => {
         
     }
     
-    console.log(onlinePlayers)
   })
   ws.on('close', (code, reason) => {
     if (code!=1005){
@@ -50,8 +48,7 @@ wss.on('connection', (ws,request) => {
       }
       onlinePlayers.delete(myId)
     }
-    console.log(`Connection closed with code ${code} and reason: ${reason}`);
-    console.log(onlinePlayers)
+    
   })
   
 })
