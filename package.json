@@ -5,13 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
-  "author": "",
+  "author": "assaf assa",
   "license": "ISC",
-  "engines": {
-    "node": "20.9.0"
-  },
   "dependencies": {
     "nodemon": "^3.0.2",
     "websocket": "^1.0.34",
