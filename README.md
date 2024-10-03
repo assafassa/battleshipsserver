@@ -1,4 +1,4 @@
-# 🎮 Battleships Game Web Application (2024)
+# 🎮 Battleships Game Web Application- Backend (2024)
 
 Welcome to the **Battleships Game**, a fun and interactive web application where players can engage in exciting battleship pairings online! This project showcases the use of **React** for the front end and **Node.js** for the back end, leveraging **WebSockets** for real-time gameplay.
 
